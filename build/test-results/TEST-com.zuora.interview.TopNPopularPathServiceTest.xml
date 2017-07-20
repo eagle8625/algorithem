@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TopNPopularPathServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2017-05-29T15:03:56" hostname="liqingsongs-MacBook-Pro.local" time="1.626">
+  <properties/>
+  <testcase name="generateRandomWords" classname="TopNPopularPathServiceTest" time="0.001"/>
+  <testcase name="createVisitLogFile" classname="TopNPopularPathServiceTest" time="0.25"/>
+  <testcase name="topNpopularPathTest" classname="TopNPopularPathServiceTest" time="1.374"/>
+  <system-out><![CDATA[eaibkvuelv
+azoxc
+zmtz
+search->search->catalog
+dun->subscribers->help
+provision->pay->filter
+help->account->provider
+seller->search->provider
+charge->rate->/
+invoice->seller->provider
+delete->filter->charge
+rate->edit->rate
+/->provision->dun
+path: search->search->catalog, visit amount: 149
+path: dun->subscribers->help, visit amount: 147
+path: provision->pay->filter, visit amount: 145
+path: help->account->provider, visit amount: 145
+path: seller->search->provider, visit amount: 144
+path: charge->rate->/, visit amount: 143
+path: invoice->seller->provider, visit amount: 143
+path: delete->filter->charge, visit amount: 143
+path: rate->edit->rate, visit amount: 143
+path: /->provision->dun, visit amount: 143
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
