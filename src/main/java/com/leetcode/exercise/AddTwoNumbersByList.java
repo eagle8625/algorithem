@@ -86,11 +86,11 @@ public class AddTwoNumbersByList {
     }
 
     public static void main(String... args){
-        ListNode one = new ListNode (7);
-        ListNode ten = new ListNode (1);
-        ListNode hundred = new ListNode (6);
-        ten.next = hundred;
-        one.next = ten;
+//        ListNode one = new ListNode (7);
+//        ListNode ten = new ListNode (1);
+//        ListNode hundred = new ListNode (6);
+//        ten.next = hundred;
+//        one.next = ten;
 
 //        ListNode one1 = new ListNode (5);
 //        ListNode ten1 = new ListNode (9);
@@ -98,11 +98,13 @@ public class AddTwoNumbersByList {
 //        ten1.next = hundred1;
 //        one1.next = ten1;
 
-        ListNode one1 = new ListNode (5);
-        ListNode ten1 = new ListNode (9);
-        one1.next = ten1;
+        ListNode one1 = new ListNode (1);
+        ListNode two1 = new ListNode (9);
+        ListNode two2 = new ListNode (9);
+        two1.next = two2;
 
         AddTwoNumbersByList addTwoNumbersByList = new AddTwoNumbersByList();
-        addTwoNumbersByList.addLists (one, one1);
+        ListNode root = addTwoNumbersByList.addLists (one1, two1);
+        System.out.println (root.val );
     }
 }
