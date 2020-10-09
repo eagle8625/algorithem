@@ -1,7 +1,8 @@
 package com.leetcode.exercise;
 
+
+import org.junit.Assert;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
 
 /**
  * Created by liqingsong on 14/06/2017.
@@ -48,7 +49,7 @@ public class FindWin {
         int[] coinTypes = {1, 2, 4};
         FindWin findWin = new FindWin ();
         int failed = findWin.getWinner (coinTypes, 4);
-        Assert.that (failed == 1, "Judge failed");
+        Assert.assertTrue (failed == 1);
     }
 
 
@@ -57,7 +58,7 @@ public class FindWin {
         int[] coinTypes = {1, 2, 4};
         FindWin findWin = new FindWin ();
         int failed = findWin.getWinner (coinTypes, 5);
-        Assert.that (failed == 2, "Judge failed");
+        Assert.assertTrue("Judge failed",failed == 2);
     }
 
     @Test
@@ -65,6 +66,6 @@ public class FindWin {
         int[] coinTypes = {1, 2, 4};
         FindWin findWin = new FindWin ();
         int failed = findWin.getWinner (coinTypes, 6);
-        Assert.that (failed == 2, "Judge failed");
+        Assert.assertTrue ("Judge failed",failed == 2);
     }
 }

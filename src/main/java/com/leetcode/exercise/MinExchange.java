@@ -1,8 +1,7 @@
 package com.leetcode.exercise;
 
+import org.junit.Assert;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
-
 import java.util.Arrays;
 
 /**
@@ -71,7 +70,7 @@ public class MinExchange {
         int[] values = {1, 3, 5};
         MinExchange minExchange = new MinExchange ( );
         int count = minExchange.minimumChange (values, 11);
-        Assert.that (count == 3, "exchange failed");
+        Assert.assertTrue (count == 3);
     }
 
     @Test
@@ -79,7 +78,7 @@ public class MinExchange {
         int[] values = {2, 3, 5};
         MinExchange minExchange = new MinExchange ( );
         int count = minExchange.minimumChange (values, 11);
-        Assert.that (count == 3, "exchange failed");
+        Assert.assertTrue (count == 3);
     }
 
     @Test
@@ -87,7 +86,7 @@ public class MinExchange {
         int[] values = {2};
         MinExchange minExchange = new MinExchange ( );
         int count = minExchange.minimumChange (values, 3);
-        Assert.that (count == -1, "exchange failed");
+        Assert.assertTrue(count == -1);
     }
 
     @Test
@@ -95,6 +94,6 @@ public class MinExchange {
         int[] values = {1, 2147483647};
         MinExchange minExchange = new MinExchange ( );
         int count = minExchange.minimumChange (values, 2);
-        Assert.that (count == 2, "exchange failed");
+        Assert.assertTrue (count == 2);
     }
 }

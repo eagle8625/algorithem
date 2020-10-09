@@ -1,7 +1,7 @@
 package com.leetcode.exercise;
 
+import org.junit.Assert;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
 
 /**
  * Created by liqingsong on 13/06/2017.
@@ -29,7 +29,7 @@ public class ReorderNumbers {
         ReorderNumbers reorderNumbers = new ReorderNumbers ();
 
         String str = reorderNumbers.convert (104802035);
-        Assert.that (str.equals ("000148235"), "Convert failed");
+        Assert.assertTrue(str.equals("000148235"));
     }
 
     @Test
@@ -37,6 +37,6 @@ public class ReorderNumbers {
         ReorderNumbers reorderNumbers = new ReorderNumbers ();
 
         String str = reorderNumbers.convert (1000402035);
-        Assert.that (str.equals ("0000014235"), "Convert failed");
+        Assert.assertTrue (str.equals ("0000014235"));
     }
 }

@@ -1,5 +1,7 @@
 package org.lqs.others;
 
+import com.leetcode.common.Node;
+
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -7,11 +9,6 @@ import java.util.concurrent.LinkedBlockingQueue;
  * Created by liqingsong on 14/07/2017.
  */
 public class Bns {
-    class Node {
-        public int val;
-        public Node left;
-        public Node right;
-    }
 
     private Node[] arr = new Node[1000];
     private static int count = 0;
@@ -49,9 +46,11 @@ public class Bns {
 
 
     public void bnfUseQueue(Node node){
-        Queue<Node> nodeQueue = new LinkedBlockingQueue<> ();
+        Queue<Node> nodeQueue = new LinkedBlockingQueue<>();
         Queue<Node> innerQueue = new LinkedBlockingQueue<> ();
-        if(node == null) return;
+        if(node == null) {
+            return;
+        }
 
         nodeQueue.add(node);
         while(!nodeQueue.isEmpty ()){
@@ -77,16 +76,16 @@ public class Bns {
 
     public static void main(String[] args) {
         Bns bns = new Bns ( );
-        Node root = bns.new Node ( );
+        Node root = new Node ( );
         root.val = 1;
-        Node left = bns.new Node ( );
+        Node left = new Node ( );
         left.val = 2;
-        Node right = bns.new Node ( );
+        Node right = new Node ( );
         right.val = 3;
         root.left = left;
         root.right = right;
 
-        Node rightLeft = bns.new Node ( );
+        Node rightLeft = new Node ( );
         rightLeft.val = 4;
         right.left = rightLeft;
 
