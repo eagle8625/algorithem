@@ -2,6 +2,7 @@ package org.lqs.others;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Util {
 
@@ -21,6 +22,10 @@ public class Util {
                     e.printStackTrace(); // 关闭时也可能抛异常！
                 }
         }
+    }
+
+    public void concurrent(){
+        ReentrantLock lock = new ReentrantLock();
     }
 
 }
