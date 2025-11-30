@@ -43,4 +43,29 @@ public class RedisSortedTest {
         System.out.println(stringLongMap);
 
     }
+
+
+    @Test
+    public void addAndGet(){
+        sorted.addAndGet("key","value");
+    }
+
+    @Test
+    public void count(){
+        sorted.incrCount("myCount");
+    }
+
+    @Test
+    public void dk(){
+        sorted.releaseDistributeKey("myKey");
+        boolean myKey = sorted.getDistributeKey("myKey");
+        assertTrue(myKey);
+
+        myKey = sorted.getDistributeKey("myKey");
+        assertFalse(myKey);
+
+        sorted.releaseDistributeKey("myKey");
+        myKey = sorted.getDistributeKey("myKey");
+        assertTrue(myKey);
+    }
 }
