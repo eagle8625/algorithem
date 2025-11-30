@@ -1,7 +1,7 @@
 package com.leetcode.exercise;
 
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by liqingsong on 15/06/2017.
@@ -13,16 +13,16 @@ public class LRUCacheTest {
         cache.put (1,1);
         cache.put (2,2);
         int v = cache.get (1);
-        Assert.that (v == 1, "failed" );
+        assertEquals("get(1) should return 1", 1, v);
         cache.put (3,3);
         v = cache.get (2);
-        Assert.that (v == -1, "failed" );
+        assertEquals("get(2) should return -1 after eviction", -1, v);
         cache.put (4,4);
         v = cache.get (1);
-        Assert.that (v == -1, "failed" );
+        assertEquals("get(1) should return -1 after eviction", -1, v);
         v = cache.get (3);
-        Assert.that (v == 3, "failed" );
+        assertEquals("get(3) should return 3", 3, v);
         v = cache.get (4);
-        Assert.that (v == 4, "failed" );
+        assertEquals("get(4) should return 4", 4, v);
     }
 }

@@ -1,7 +1,7 @@
 package com.leetcode.exercise;
 
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by liqingsong on 24/07/2017.
@@ -13,7 +13,7 @@ public class TwoSumSolutionTest {
         int target = 9;
         TwoSumSolution solution = new TwoSumSolution ();
         int[] slices = solution.twoSum (nums, target);
-        Assert.that (slices[0] == 0 && slices[1] == 1, "failed" );
+        assertTrue("failed", slices[0] == 0 && slices[1] == 1);
     }
 
     @Test

@@ -1,7 +1,7 @@
 package com.leetcode.exercise;
 
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by liqingsong on 07/06/2017.
@@ -18,7 +18,7 @@ public class BinaryTreeTiltTest {
         rootNode.setRight (rightNode);
         BinaryTreeTilt binaryTreeTilt = new BinaryTreeTilt();
         binaryTreeTilt.tilt (rootNode);
-        Assert.that (binaryTreeTilt.tilt == 1, "tilt failed");
+        assertEquals("tilt failed", 1, binaryTreeTilt.tilt);
     }
 
     @Test
@@ -46,6 +46,6 @@ public class BinaryTreeTiltTest {
         BinaryTreeTilt binaryTreeTilt = new BinaryTreeTilt();
         binaryTreeTilt.tilt (rootNode);
 
-        Assert.that (binaryTreeTilt.tilt == 12, "tilt failed");
+        assertEquals("tilt failed", 12, binaryTreeTilt.tilt);
     }
 }

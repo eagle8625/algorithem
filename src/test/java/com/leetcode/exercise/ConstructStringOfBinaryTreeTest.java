@@ -1,7 +1,7 @@
 package com.leetcode.exercise;
 
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by liqingsong on 08/06/2017.
@@ -25,7 +25,7 @@ public class ConstructStringOfBinaryTreeTest {
 
         String str = constructStringOfBinaryTree.tree2str (rootNode);
         System.out.println (str );
-        Assert.that (str.equals ("1(2(4))(3)"), "construct binary tree pre-order string failed");
+        assertEquals("construct binary tree pre-order string failed", "1(2(4))(3)", str);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class ConstructStringOfBinaryTreeTest {
 
         String str = constructStringOfBinaryTree.tree2str (rootNode);
         System.out.println (str );
-        Assert.that (str.equals ("1(2()(4))(3)"), "construct binary tree pre-order string failed");
+        assertEquals("construct binary tree pre-order string failed", "1(2()(4))(3)", str);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class ConstructStringOfBinaryTreeTest {
 
         String str = constructStringOfBinaryTree.tree2str (rootNode);
         System.out.println (str );
-        Assert.that (str.equals ("1(2(3)(4))"), "construct binary tree pre-order string failed");
+        assertEquals("construct binary tree pre-order string failed", "1(2(3)(4))", str);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class ConstructStringOfBinaryTreeTest {
 
         String str = constructStringOfBinaryTree.tree2str (null);
         System.out.println (str );
-        Assert.that (str.equals (""), "construct binary tree pre-order string failed");
+        assertEquals("construct binary tree pre-order string failed", "", str);
     }
 
     @Test
@@ -88,7 +88,7 @@ public class ConstructStringOfBinaryTreeTest {
         ConstructStringOfBinaryTree constructStringOfBinaryTree = new ConstructStringOfBinaryTree();
         String str = constructStringOfBinaryTree.tree2str (root);
         System.out.println (str);
-        Assert.that (str.equals ("3(1()(2))"), "construct binary tree pre-order string failed");
+        assertEquals("construct binary tree pre-order string failed", "3(1()(2))", str);
 
     }
 }

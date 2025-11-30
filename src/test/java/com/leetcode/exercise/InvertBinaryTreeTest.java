@@ -1,7 +1,7 @@
 package com.leetcode.exercise;
 
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by liqingsong on 08/06/2017.
@@ -46,6 +46,6 @@ public class InvertBinaryTreeTest {
 
         rootNode = InvertBinaryTree.invertTree (rootNode);
 
-        Assert.that (rootNode.getLeft ( ).getVal () == 7, "invert failed");
+        assertEquals("invert failed", 7, rootNode.getLeft().getVal());
     }
 }

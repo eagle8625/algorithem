@@ -1,7 +1,7 @@
 package com.leetcode.exercise;
 
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by liqingsong on 12/06/2017.
@@ -13,7 +13,7 @@ public class MergeTwoBinaryTreesTest {
         TreeNode t2 = new TreeNode (2);
         MergeTwoBinaryTrees mergeTwoBinaryTrees = new MergeTwoBinaryTrees ( );
         TreeNode treeNode = mergeTwoBinaryTrees.mergeTreesRecursion (t1, t2);
-        Assert.that (treeNode.val == 3, "Merged failed");
+        assertEquals("Merged failed", 3, treeNode.val);
     }
 
     @Test
@@ -26,7 +26,7 @@ public class MergeTwoBinaryTreesTest {
         TreeNode t2 = new TreeNode (2);
         MergeTwoBinaryTrees mergeTwoBinaryTrees = new MergeTwoBinaryTrees ( );
         TreeNode treeNode = mergeTwoBinaryTrees.mergeTreesRecursion (t1, t2);
-        Assert.that (treeNode.left.val == 3, "Merged failed");
+        assertEquals("Merged failed", 3, treeNode.left.val);
     }
 
 
@@ -43,7 +43,7 @@ public class MergeTwoBinaryTreesTest {
 
         MergeTwoBinaryTrees mergeTwoBinaryTrees = new MergeTwoBinaryTrees ( );
         TreeNode treeNode = mergeTwoBinaryTrees.mergeTreesRecursion (t1, t2);
-        Assert.that (treeNode.left.val == 7, "Merged failed");
+        assertEquals("Merged failed", 7, treeNode.left.val);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class MergeTwoBinaryTreesTest {
 
         MergeTwoBinaryTrees mergeTwoBinaryTrees = new MergeTwoBinaryTrees ( );
         TreeNode treeNode = mergeTwoBinaryTrees.mergeTreesRecursion (t1, t2);
-        Assert.that (treeNode.right.left.val == 6, "Merged failed");
+        assertEquals("Merged failed", 6, treeNode.right.left.val);
     }
 
 }
