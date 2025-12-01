@@ -141,7 +141,7 @@ public class RedisSorted {
             Double zscore = jedis.zscore(key, member);
             System.out.println("zscore:" + zscore);
             jedis.zincrby(key, 1, member);
-
+            jedis.sadd(key, member);
         }
     }
 }
