@@ -106,4 +106,42 @@ public class RedisSorted {
             return "1".equals(result.toString());
         }
     }
+
+    private static final String LRU_HASH_KEY = "lru:cache:data";
+    private static final String LRU_ZSET_KEY = "lru:cache:time";
+    private static final Integer LRU_SIZE = 5;
+
+    public void lruSet(String key, String value) {
+        try (Jedis jedis = jedisPool.getResource()) {
+            jedis.hset(LRU_HASH_KEY, key, value);
+            jedis.zadd(LRU_ZSET_KEY, System.currentTimeMillis(), key);
+            long zcard = jedis.zcard(LRU_ZSET_KEY);
+            if(zcard <= LRU_SIZE) {
+                return;
+            }
+
+            List<String> zrange = jedis.zrange(key, 0, 0);
+            jedis.hdel(LRU_HASH_KEY, zrange.getFirst());
+            jedis.zrem(key, zrange.getFirst());
+        }
+    }
+
+    public String lruGet(String key) {
+        try (Jedis jedis = jedisPool.getResource()) {
+            String hget = jedis.hget(LRU_HASH_KEY, key);
+            if(null != hget) {
+                jedis.zadd(LRU_ZSET_KEY, System.currentTimeMillis(), key);
+            }
+            return hget;
+        }
+    }
+
+    public void zget(String key, String member) {
+        try (Jedis jedis = jedisPool.getResource()) {
+            Double zscore = jedis.zscore(key, member);
+            System.out.println("zscore:" + zscore);
+            jedis.zincrby(key, 1, member);
+
+        }
+    }
 }
